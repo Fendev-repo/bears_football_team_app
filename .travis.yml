@@ -1,0 +1,10 @@
+services:
+  - postgresql
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database bears_football_club_app_test;' -U postgres
+
+test:
+  adapter: postgresql
+  database: bears_football_club_app_test

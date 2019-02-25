@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: bears_football_club_app_test
+  username: postgres

@@ -73,3 +73,4 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "jquery-rails", "~> 4.3", ">= 4.3.3"
 gem "simplecov", require: false, group: :test
 gem "rubocop-rails_config"
+gem 'devise', '~> 4.6', '>= 4.6.1'

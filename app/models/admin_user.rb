@@ -4,4 +4,3 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
 end
-user = AdminUser.create :email => 'user2@example.com', :password => 'please'

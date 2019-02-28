@@ -16,7 +16,7 @@ when "development"
      password: 'password',
      password_confirmation: 'password')
 
-  # 10 standard 'devise confirmed' users 
+  # 10 standard 'devise confirmed' users
    10.times do |num|
      User.create(first_name: "#{['jenni', 'sandi', 'john', 'bill'].sample}",
                   last_name: "#{['williams', 'white', 'jones'].sample}",

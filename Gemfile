@@ -74,4 +74,4 @@ gem "jquery-rails", "~> 4.3", ">= 4.3.3"
 gem "simplecov", require: false, group: :test
 gem "rubocop-rails_config"
 gem "devise", "~> 4.6", ">= 4.6.1"
-gem 'activeadmin', '~> 1.4', '>= 1.4.3'
+gem "activeadmin", "~> 1.4", ">= 1.4.3"

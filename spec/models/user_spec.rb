@@ -7,13 +7,13 @@ RSpec.describe User, type: :model do
     expect(FactoryBot.build(:user)).to be_valid
   end
 
-  it 'is valid with a first name, last name, email and password' do
+  it "is valid with a first name, last name, email and password" do
     user = FactoryBot.create(:user)
 
     expect(user).to be_valid
   end
 
-  it 'is invalid without a firstname' do
+  it "is invalid without a firstname" do
     user = FactoryBot.build(:user, first_name: nil)
     user.valid?
 
@@ -21,14 +21,14 @@ RSpec.describe User, type: :model do
   end
 
 
-  it 'is invalid without a lastname' do
+  it "is invalid without a lastname" do
     user = FactoryBot.build(:user, last_name: nil)
     user.valid?
 
     expect(user.errors[:last_name]).to include("can't be blank")
   end
 
-  it 'is invalid without a email address' do
+  it "is invalid without a email address" do
     # This validation taken care of by devise
     user = FactoryBot.build(:user, email: nil)
     user.valid?
@@ -36,10 +36,10 @@ RSpec.describe User, type: :model do
     expect(user.errors[:email]).to include("can't be blank")
   end
 
-  it 'it is invalid with a duplicate email address' do
+  it "it is invalid with a duplicate email address" do
     # This validation taken care of by devise
-    user1 = FactoryBot.create(:user, email: 'sample@sample.com')
-    user2 = FactoryBot.build(:user, email: 'sample@sample.com')
+    FactoryBot.create(:user, email: "sample@sample.com")
+    user2 = FactoryBot.build(:user, email: "sample@sample.com")
     user2.valid?
 
     expect(user2.errors[:email]).to include("has already been taken")

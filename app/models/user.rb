@@ -10,4 +10,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one :profile, dependent: :destroy
+
+  def to_s
+    "#{last_name.capitalize}, #{first_name.capitalize}"
+  end
 end

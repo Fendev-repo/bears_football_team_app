@@ -16,6 +16,8 @@ when "development"
      password: 'password',
      password_confirmation: 'password')
 
+
+
   # 10 standard 'devise confirmed' users
    10.times do |num|
      User.create(first_name: "#{['jenni', 'sandi', 'john', 'bill'].sample}",
@@ -24,7 +26,26 @@ when "development"
                   password: "#{num}password")
    end
    User.all.each do |user|
-     user.confirm
+      user.confirm
+   end
+
+  postions =  ['quarterback', 'center'] +
+              ['running back', 'fullback'] +
+              ['wide receiver', 'tight end' ] +
+              ['left-right guard', 'left-right tackle'] +
+              ['defensive tackle', 'defensive end'] +
+              ['linebacker', 'safety', 'cornerback']
+
+   User.all.each do |user|
+      user.create_profile(background: "This is backgound #{user}",
+                         start_date: DateTime.now.to_date,
+                         image: 'https://fakeimg.pl/250x100/',
+                         pb_bench_press: "#{rand(20..100)}",
+                         pb_squat_weight: "#{rand(20..100)}",
+                         pb_100mtr_sprint: "#{rand(20..100)}",
+                         height: "#{rand(60..150)}",
+                         weight: "#{rand(60..200)}",
+                         current_postion: "#{ postions.sample }" )
    end
 when "production"
 end

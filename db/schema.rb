@@ -43,15 +43,15 @@ ActiveRecord::Schema.define(version: 2019_02_28_023409) do
 
   create_table "profiles", force: :cascade do |t|
     t.text "background"
-    t.boolean "active_player"
+    t.boolean "active_player", default: false
     t.date "start_date"
     t.string "image"
-    t.float "pb_bench_press"
-    t.time "pb_100mtr_sprint"
-    t.float "pb_squat_weight"
+    t.float "pb_bench_press_kg"
+    t.float "pb_100mtr_sprint_seconds"
+    t.float "pb_squat_weight_kg"
     t.float "height"
     t.float "weight"
-    t.string "current_postion"
+    t.string "current_position"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

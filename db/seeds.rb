@@ -40,12 +40,12 @@ when "development"
       user.create_profile(background: "This is backgound #{user}",
                          start_date: DateTime.now.to_date,
                          image: 'https://fakeimg.pl/250x100/',
-                         pb_bench_press: "#{rand(20..100)}",
-                         pb_squat_weight: "#{rand(20..100)}",
-                         pb_100mtr_sprint: "#{rand(20..100)}",
+                         pb_bench_press_kg: "#{rand(20..100)}",
+                         pb_squat_weight_kg: "#{rand(20..100)}",
+                         pb_100mtr_sprint_seconds: "#{rand(20..100)}",
                          height: "#{rand(60..150)}",
                          weight: "#{rand(60..200)}",
-                         current_postion: "#{ postions.sample }" )
+                         current_position: "#{ postions.sample }" )
    end
 when "production"
 end

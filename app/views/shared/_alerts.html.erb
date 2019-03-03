@@ -1,0 +1,12 @@
+<div class="container">
+  <% if notice %>
+    <script type="text/javascript">
+      M.toast({html: "<%= notice %>"})
+    </script>
+  <% end %>
+  <% if alert %>
+    <script type="text/javascript">
+      M.toast({html: "<%= alert %>"})
+    </script>
+  <% end %>
+</div>

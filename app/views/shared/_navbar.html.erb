@@ -5,14 +5,16 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       
       <li><%= link_to 'Home', root_path %>
+      <li><%= link_to 'Line Up', players_path %></li>
 
       <% if current_user %>
         <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to 'My Profile' %>
+        <li><%= link_to 'My Profile', profile_path(current_user) %>
+        <li><%= link_to 'Huddles', huddles_path %>
       <% else %>
-        <li><%= link_to 'About Team' %></li>
+        <li><%= link_to 'Join Team', new_user_registration_path %>
         <li><%= link_to 'Sign in', new_user_session_path %></li>
-        <li><%= link_to 'Join Team', new_user_registration_path %></li>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -21,14 +23,16 @@
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li><%= link_to 'Home' %></li>
-  <li><%= link_to 'About Team' %></li>
-  <li><%= link_to 'Join Team' %></li>
-  
-  <% if current_user %>
-    <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-  <% else %>
-    <li><%= link_to 'Sign in', new_user_session_path %></li>
-    <li><%= link_to 'Join Team', new_user_registration_path %></li>
-  <% end %>
+    <li><%= link_to 'Home', root_path %>
+    <li><%= link_to 'Line Up', players_path %></li>
+
+    <% if current_user %>
+      <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to 'My Profile', profile_path(current_user) %>
+      <li><%= link_to 'Huddles', huddles_path %>
+    <% else %>
+      <li><%= link_to 'Join Team', new_user_registration_path %>
+      <li><%= link_to 'Sign in', new_user_session_path %></li>
+      </li>
+    <% end %>
 </ul>

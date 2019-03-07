@@ -45,7 +45,7 @@ when "development"
                          pb_100mtr_sprint_seconds: "#{rand(20..100)}",
                          height: "#{rand(60..150)}",
                          weight: "#{rand(60..200)}",
-                         current_position: "#{ postions.sample }" )
+                         current_position: "#{ postions.sample }" ).save
    end
 when "production"
 end

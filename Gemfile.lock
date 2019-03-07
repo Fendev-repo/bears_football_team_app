@@ -324,7 +324,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   capybara (~> 3.13, >= 3.13.2)
-  chromedriver-helper
+  chromedriver-helper (~> 2.1)
   coffee-rails (~> 4.2)
   devise (~> 4.6, >= 4.6.1)
   factory_bot_rails (~> 5.0, >= 5.0.1)
@@ -341,7 +341,7 @@ DEPENDENCIES
   rspec-rails (~> 3.8, >= 3.8.2)
   rubocop-rails_config
   sass-rails (~> 5.0)
-  selenium-webdriver
+  selenium-webdriver (~> 3.141)
   simplecov
   spring
   spring-commands-rspec (~> 1.0, >= 1.0.4)

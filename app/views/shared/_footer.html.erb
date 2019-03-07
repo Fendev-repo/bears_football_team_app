@@ -11,6 +11,11 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
+
+    <% if current_user %>
+      <p><%= "Signed in as #{current_user}" %></p>
+    <% end %>
+
     <%= "© #{Time.current.year} Copyright Fenian Noakes" %>
     </div>
   </div>

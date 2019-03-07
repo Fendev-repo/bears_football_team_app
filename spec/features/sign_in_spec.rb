@@ -7,12 +7,12 @@ RSpec.feature "SignIns", type: :feature do
 
   scenario "user successfully signs in" do
     visit root_path
-    click_link "Sign in"
+    click_link("Sign in", match: :first)
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
-    click_button "Log in"
+    click_button "Log in" 
 
-    expect(page).to have_content("Signed in successfully")
     expect(page).to have_content("Bears Football Club")
+    expect(page).to have_content("Signed in as")
   end
 end

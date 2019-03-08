@@ -1,17 +1,16 @@
 <div class="container">
-  
- <div class="container">
 
   <h3 class="flow-text"><%= "#{current_user.first_name}'s Profile" %></h3>
+
       <div class="col">
         <div class="card-panel grey lighten-5 z-depth-1">
           <div class="row valign-wrapper">
             <div class="col">
 
-              <% if @profile.nil? %>
+              <% if @profile.image.nil? %>
                 <%= image_tag "https://fakeimg.pl/200/", class: "circle responsive-img", alt: 'Profile image of player' %>
               <% else %>
-                <%= image_tag "header.png", class:  "circle responsive-img", alt: 'Profile image of player' %>
+                <%= image_tag @profile.image, class:  "circle responsive-img", alt: 'Profile image of player' %>
               <% end %>
             
             </div>
@@ -26,7 +25,7 @@
 
       <div class="col">
 
-        <ul class="collection center">
+        <ul class="collection">
 
           <% if @profile.nil? %>
               
@@ -37,28 +36,27 @@
       
           <% else %>  
 
-            <li class="collection-item flow-text">Background: <%= "#{@user.profile.Background}" %></li>
-            <li class="collection-item">Player Status: <%= "#{@user.profile.Background}" %></li>
-            <li class="collection-item">Start Date <%= "#{@user.profile.Background}" %></li>
-            <li class="collection-item">Personal Best Bench Press kg: <%= "#{@user.profile.Background}" %></li>
-            <li class="collection-item">Personal 100mtr sprint sec: <%= "#{@user.profile.Background}" %></li>
-            <li class="collection-item">Personal Best Squat Weight kg: <%= "#{@user.profile.Background}" %></li>
-            <li class="collection-item">Current Field Position: <%= "#{@user.profile.Background}" %></li>
-            <li class="collection-item">Weight: <%= "#{@user.profile.Background}" %></li>
-            <li class="collection-item">Height: <%= "#{@user.profile.Background}" %></li>
-
+            <li class="collection-item">Background: <%= @profile.background %></li>
+            <li class="collection-item">Activated as a Player: <%= @profile.active_player %></li>
+            <li class="collection-item">Personal Best Bench Press kg: <%= @profile.pb_bench_press_kg %></li>
+            <li class="collection-item">Personal Best Squat kg: <%= @profile.pb_squat_weight_kg %></li>
+            <li class="collection-item">Personal Best 100mtr Sprint secs: <%= @profile.pb_100mtr_sprint_seconds %></li>
+            <li class="collection-item">Height cm: <%= @profile.pb_100mtr_sprint_seconds %></li>
+            <li class="collection-item">Weight kg: <%= @profile.pb_100mtr_sprint_seconds %></li>
           <% end %>
 
         </ul>
       </div>
-    </div>
+
     <br>
     <br>
 
     <div class="container center">
-     <a class="waves-effect waves-light btn-large"><i class="material-icons right">edit</i>Edit Background or Image</a>
-     <br>
-     <br>
+      <%= link_to edit_profile_path(current_user.id), class: "waves-effect waves-light btn-large" do %>
+        <i class="material-icons right">edit</i>Edit Background or Image</a>
+      <% end %>
+    </div>    
 
-    </div>
+   <br>
+   <br>
 </div>

@@ -1,48 +1,71 @@
-<div class="container">
-  <h2 class="flow-text">Join and Play For The Team</h2>
-  <br>
-  <br>
+<div class="container data-turbolinks="false"">
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card z-depth-5">
+        
+        <div class="card-image">
+          <img src="https://storage.googleapis.com/main_project_images_and_patterns/team_chill.jpg" class="responsive-img">
+          
+        </div>
 
-    <div class="form-group">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: "form-control" %>
+      </div>
     </div>
 
-    <div class="form-group">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: "form-control" %>
-    </div>
+    <div class="col s12 m6">
+      <div class="card z-depth-5">
 
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control" %>
-    </div>
+        <div class="card-action center flow-text">
+          <%= fa_icon "paw x4", text: 'Join Team' %><br>
+          <%= render 'registration_process_summary' %>
+        </div>
 
-    <div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-      <% if @minimum_password_length %>
-      <span class="help-block"><%= @minimum_password_length %> characters minimum.</span>
-      <% end %>
-    </div>
+        <div class="container">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
 
-    <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-    </div>
+              <div class="form-group">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name, class: "form-control" %>
+              </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up", class: "btn btn-primary" %>
-    </div>
-  <% end %>
+              <div class="form-group">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name, class: "form-control" %>
+              </div>
 
-  <br>
-  <br>
-  <%= render "devise/shared/links" %>
-  <br>
-  <br>
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :password %>
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                <% if @minimum_password_length %>
+                <span class="help-block"><%= @minimum_password_length %> characters minimum.</span>
+                <% end %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Sign up", class: "btn btn-primary" %>
+              </div>
+          <% end %>
+
+          <br>
+          <br>
+          <%= render "devise/shared/links" %>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+

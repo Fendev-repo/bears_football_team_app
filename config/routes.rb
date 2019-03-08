@@ -33,4 +33,11 @@ end
       - Contact information
       - Name of coach
       - Address
+
+Season Scorevcard
+Next Game Information
+Weather Forcast
+Team News
+About Us
+
 =end

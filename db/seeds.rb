@@ -39,7 +39,7 @@ when "development"
    User.all.each do |user|
       user.create_profile(background: "This is backgound #{user}",
                          start_date: DateTime.now.to_date,
-                         image: 'https://fakeimg.pl/250x100/',
+                         image: Faker::Avatar.image, 
                          pb_bench_press_kg: "#{rand(20..100)}",
                          pb_squat_weight_kg: "#{rand(20..100)}",
                          pb_100mtr_sprint_seconds: "#{rand(20..100)}",

@@ -54,6 +54,7 @@ group :development do
   gem "launchy", "~> 2.4", ">= 2.4.3"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem 'faker', '~> 1.9', '>= 1.9.3'
 end
 
 group :test do
@@ -75,3 +76,4 @@ gem "simplecov", require: false, group: :test
 gem "rubocop-rails_config"
 gem "devise", "~> 4.6", ">= 4.6.1"
 gem "activeadmin", "~> 1.4", ">= 1.4.3"
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'

@@ -12,9 +12,9 @@
 case Rails.env
 when "development"
   # ActiveAdmin default admin user
-   AdminUser.create!(email: 'admin@example.com',
-     password: 'password',
-     password_confirmation: 'password')
+   AdminUser.create!(email: 'fendev@protonmail.com',
+     password: 'cheeseandbeer',
+     password_confirmation: 'cheeseandbeer')
 
 
 

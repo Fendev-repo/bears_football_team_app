@@ -8,6 +8,13 @@
         <%= link_to new_user_registration_path, class: "waves-effect waves-light btn-large yellow z-depth-5" do %>
           <%= fa_icon "paw x4", text: 'Join Team' %>
         <% end %>
+      <% end %>
+
+
+      <% if user_signed_in? && current_user.profile.nil? %>
+        <%= link_to edit_profile_path(current_user.id), class: "waves-effect waves-light btn-large pulse green accent-2" do %>
+            <i class="material-icons left">edit</i>Add Profile Image and Background</a>
+        <% end %>
       <% end %> 
       
       <br>

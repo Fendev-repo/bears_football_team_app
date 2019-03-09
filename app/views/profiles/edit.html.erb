@@ -1,0 +1,51 @@
+<br>
+<br>
+
+<div class="container center flow-text">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+
+
+          <%= form_with(model: @profile, local: true) do |f| %>
+            
+            <% unless @profile.nil? %>
+              <% if @profile.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+                  <ul>
+                  <% @profile.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+            <% end %>
+
+            <div class="form-group">
+              <%= f.label :background, class: "flow-text" %><br>
+              <%= f.text_area :background, class: "form-control", id: :player_background %>
+            </div>
+
+
+            <div class="actions">
+            </div>
+          <% end %>
+
+            <form action="#">
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>Add Player Profile Image</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>

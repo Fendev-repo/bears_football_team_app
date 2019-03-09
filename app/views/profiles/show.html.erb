@@ -7,10 +7,12 @@
           <div class="row valign-wrapper">
             <div class="col">
 
-              <% if @profile.image.nil? %>
-                <%= image_tag "https://fakeimg.pl/200/", class: "circle responsive-img", alt: 'Profile image of player' %>
-              <% else %>
-                <%= image_tag @profile.image, class:  "circle responsive-img", alt: 'Profile image of player' %>
+              <% unless @profile.nil? %>
+                <% if @profile.image.nil? %>
+                  <%= image_tag "https://fakeimg.pl/200/", class: "circle responsive-img", alt: 'Profile image of player' %>
+                <% else %>
+                  <%= image_tag @profile.image, class:  "circle responsive-img", alt: 'Profile image of player' %>
+                <% end %>
               <% end %>
             
             </div>

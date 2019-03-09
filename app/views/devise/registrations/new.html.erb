@@ -17,7 +17,6 @@
 
         <div class="card-action center flow-text">
           <%= fa_icon "paw x4", text: 'Join Team' %><br>
-          <%= render 'registration_process_summary' %>
         </div>
 
         <div class="container">
@@ -51,6 +50,10 @@
                 <%= f.label :password_confirmation %>
                 <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
               </div>
+
+              <br>
+              <br>
+               <a class="btn tooltipped" data-position="bottom" data-tooltip="You will be sent an email to confirm your account; please then sign back in and edit your profile.">What happens next?</a>
 
               <div class="actions">
                 <%= f.submit "Sign up", class: "btn btn-primary" %>

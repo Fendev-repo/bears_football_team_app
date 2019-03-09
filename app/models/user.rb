@@ -14,4 +14,9 @@ class User < ApplicationRecord
   def to_s
     "#{last_name.capitalize}, #{first_name.capitalize}"
   end
+
+  def empty_profile? 
+    self.profile[:background].nil? || 
+    self.profile[:image].nil?
+  end
 end

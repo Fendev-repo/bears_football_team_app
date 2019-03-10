@@ -11,6 +11,6 @@ class UsersController < ApplicationController
 
   private
     def find_active_players
-      @active_players = User.all.select { |user| user.profile }
+      @active_players = User.all.select { |user| user.player_active? }
     end
 end

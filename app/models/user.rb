@@ -19,4 +19,8 @@ class User < ApplicationRecord
     self.profile[:background].nil? || 
     self.profile[:image].nil?
   end
+
+  def player_active?
+    self.profile[:active_player]
+  end
 end

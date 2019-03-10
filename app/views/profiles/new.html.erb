@@ -1,12 +1,12 @@
 <div class="container center class="flow-text"">
 
-  <h2>Edit Profile</h2>
+  <h2>Create New Profile</h2>
 
-    <%= form_for @profile, url: {action: "edit"} do |f| %>
+    <%= form_for @profile, url: {action: "create"} do |f| %>
       <p>Background</p>
       <%= f.text_area :background %>
       <p>Profile Image</p>
-      <%= f.submit "Edit" %>
+      <%= f.submit "Create" %>
     <% end %>
 
   </div>

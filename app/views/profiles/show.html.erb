@@ -1,64 +1,119 @@
 <div class="container">
+  <h1 class="flow-text"><%= "#{current_user}' s Profile" %></h1>
 
-  <h3 class="flow-text"><%= "#{current_user.first_name}'s Profile" %></h3>
+  <div class="row">
 
-      <div class="col">
-        <div class="card-panel grey lighten-5 z-depth-1">
-          <div class="row valign-wrapper">
-            <div class="col">
+    <div class="col s12 m6">
+      <table class="striped center">
+        <tr>
+          <td>
+            Player Background:
+          </td>
+          <td>
+            <%= @profile.background || 'Not listed yet' %>
+          </td>
+        </tr>
 
-              <% unless @profile.nil? %>
-                <% if @profile.image.nil? %>
-                  <%= image_tag "https://fakeimg.pl/200/", class: "circle responsive-img", alt: 'Profile image of player' %>
-                <% else %>
-                  <%= image_tag @profile.image, class:  "circle responsive-img", alt: 'Profile image of player' %>
-                <% end %>
-              <% end %>
-            
-            </div>
-            <div class="col">
-              <span class="black-text flow-text">
-                Current Field Position: 
-              </span>
-            </div>
+        <tr>
+          <td>
+            Player marked as 'active':
+          </td>
+          <td>
+            <%= @profile.active_player || 'Not listed yet' %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Start Date:
+          </td>
+          <td>
+            <%= @profile.start_date || 'Not listed yet' %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Personal Best Bench Press (kg):
+          </td>
+          <td>
+            <%= @profile.pb_bench_press_kg || 'Not listed yet' %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Personal Best 100mtr Sprint:
+          </td>
+          <td>
+            <%= @profile.pb_100mtr_sprint_seconds || 'Not listed yet' %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Personal Best Squat Weight (kg):
+          </td>
+          <td>
+            <%= @profile.pb_squat_weight_kg || 'Not listed yet' %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Player Height (cm):
+          </td>
+          <td>
+            <%= @profile.height || 'Not listed yet' %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Player Weight (kg):
+          </td>
+          <td>
+            <%= @profile.height || 'Not listed yet' %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Player Height:
+          </td>
+          <td>
+            <%= @profile.height || 'Not listed yet' %>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+    <div class="col s12 m6 center">
+       <div class="card">
+        <div class="card-image">
+          <% if current_user.profile.image %>
+            <%= image_tag(Faker::Avatar.image) %>
+          <% else %>
+            <%= image_tag(Faker::Avatar.image) %>
+          <% end %>
+        </div>
+        <div class="card-content flow-text">
+          <div class="chip">
+            Player Current Field Positon:
           </div>
+
+
+          <p><%= @profile.current_position || 'Not listed yet' %></p>
+
+          <div class="divider"></div>
+          <br>
+          
+          <%= link_to edit_profile_path(@profile), class: "waves-effect waves-light btn-small" do %>
+            <i class="material-icons left">cloud</i>Edit Profile Image or Background</a>
+          <% end %>
         </div>
       </div>
-
-      <div class="col">
-
-        <ul class="collection">
-
-          <% if @profile.nil? %>
-              
-              <br>
-              <div class="chip">Player not yet activated by the coach</div>
-              <br>
-              <br>
-      
-          <% else %>  
-
-            <li class="collection-item">Background: <%= @profile.background %></li>
-            <li class="collection-item">Activated as a Player: <%= @profile.active_player %></li>
-            <li class="collection-item">Personal Best Bench Press kg: <%= @profile.pb_bench_press_kg %></li>
-            <li class="collection-item">Personal Best Squat kg: <%= @profile.pb_squat_weight_kg %></li>
-            <li class="collection-item">Personal Best 100mtr Sprint secs: <%= @profile.pb_100mtr_sprint_seconds %></li>
-            <li class="collection-item">Height cm: <%= @profile.pb_100mtr_sprint_seconds %></li>
-            <li class="collection-item">Weight kg: <%= @profile.pb_100mtr_sprint_seconds %></li>
-          <% end %>
-
-        </ul>
-      </div>
-
-    <br>
-    <br>
-
-    <div class="container center">
-      <%= link_to edit_profile_path(current_user.id), class: "waves-effect waves-light btn-large" do %>
-        <i class="material-icons right">edit</i>Edit Background or Image</a>
-      <% end %>
-    </div>    
-
-   <br>
-   <br>
+    </div>
+  </div>
 </div>

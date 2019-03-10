@@ -12,7 +12,7 @@
 
 
       <% if user_signed_in? && current_user.profile.nil? %>
-        <%= link_to edit_profile_path(current_user.id), class: "waves-effect waves-light btn-large pulse green accent-2" do %>
+        <%= link_to new_profile_path(current_user), class: "waves-effect waves-light btn-large pulse green accent-2" do %>
             <i class="material-icons left">edit</i>Add Profile Image and Background</a>
         <% end %>
       <% end %> 

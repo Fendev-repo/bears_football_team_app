@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   
   resources :users, as: 'players'
   resources :huddles
-  resources :profiles, only: [:new, :create, :show, :edit]
+  resources :profiles, only: [:new, :create, :show, :edit, :update]
 end

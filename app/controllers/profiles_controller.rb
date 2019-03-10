@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = current_user.profile
+
   end
 
   def create
@@ -19,6 +20,16 @@ class ProfilesController < ApplicationController
       redirect_to profile_path(current_user.id) 
     else
       render 'new'
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @profile.update(profile_params)
+        format.html { redirect_to profile_path(current_user.id), notice: "Profile was successfully updated." }
+      else
+        format.html { render :edit }
+      end
     end
   end
 

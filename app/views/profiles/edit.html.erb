@@ -1,11 +1,19 @@
-<div class="container center class="flow-text"">
+<div class="container center">
 
   <h2>Edit Profile</h2>
 
     <%= form_for @profile, url: { action: :update } do |f| %>
-      <p>Background</p>
+      <h6>Background</h6>
       <%= f.text_area :background %>
-      <p>Profile Image</p>
+
+      <h6>Profile Image</h6>
+      <br>
+
+      <%= f.file_field :image %>
+
+      <br>
+      <br>
+
       <%= f.submit "Update" %>
     <% end %>
 

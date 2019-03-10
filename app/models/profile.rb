@@ -2,7 +2,7 @@
 
 class Profile < ApplicationRecord
   belongs_to :user
-  # has_one_attached :image
+  has_one_attached :image
 
   attr_reader :active_player, :current_position
 

@@ -16,10 +16,12 @@
 
         <tr>
           <td>
-            Player marked as 'active':
+            Player Marked Active:
           </td>
           <td>
-            <%= @profile.active_player || 'Not listed yet' %>
+            <div class="chip">
+              <p> <%= @profile[:active_player].to_s.capitalize %></p>
+            </div>
           </td>
         </tr>
 
@@ -73,16 +75,7 @@
             Player Weight (kg):
           </td>
           <td>
-            <%= @profile.height || 'Not listed yet' %>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            Player Height:
-          </td>
-          <td>
-            <%= @profile.height || 'Not listed yet' %>
+            <%= @profile.weight || 'Not listed yet' %>
           </td>
         </tr>
 
@@ -92,8 +85,8 @@
     <div class="col s12 m6 center">
        <div class="card">
         <div class="card-image">
-          <% if current_user.profile.image %>
-            <%= image_tag(Faker::Avatar.image) %>
+          <% if current_user.profile.image.attached? %>
+            <%= image_tag(current_user.profile.image) %>
           <% else %>
             <%= image_tag(Faker::Avatar.image) %>
           <% end %>

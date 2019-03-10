@@ -18,10 +18,14 @@
           <div class="card">
             <br>
               <div class="chip">
-                <p><%= player.profile[:current_position] %></p>
+                <p><%= player.profile[:current_position] || 'No yet assigned a position' %></p>
               </div>
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="<%= player.profile.image %>">
+              <% if player.profile.image.attached? %>
+                <%= image_tag(player.profile.image, class: 'activator') %>
+              <% else %>
+                <%= image_tag(Faker::Avatar.image) %>
+              <% end %>
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
@@ -51,3 +55,8 @@
   <% end %>
       
 </div>
+
+
+<p>
+  
+</p>

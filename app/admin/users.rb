@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register User, as: "Players" do
-  permit_params :first_name, :last_name, :email
+  permit_params :first_name, :last_name, :email, :active_player
 
   filter :first_name
   filter :last_name
@@ -15,7 +15,7 @@ ActiveAdmin.register User, as: "Players" do
       link_to "#{user.first_name.capitalize}'s profile", admin_player_profile_path(user.id)
     end
     column :active_player do |user|
-      "#{user.profile[:active_player].to_s.capitalize}"
+      "#{user.profile[:active_player]}".capitalize
     end
     actions
   end

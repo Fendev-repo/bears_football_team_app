@@ -10,7 +10,7 @@ class Profile < ApplicationRecord
   scope :not_yet_active_players, -> { where(active_player: false) }
 
 
-  def to_s
-    current_position
-  end
+  # def to_s
+  #   current_position
+  # end
 end

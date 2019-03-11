@@ -77,3 +77,4 @@ gem "rubocop-rails_config"
 gem "devise", "~> 4.6", ">= 4.6.1"
 gem "activeadmin", "~> 1.4", ">= 1.4.3"
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+gem 'google-cloud-storage', '~> 1.17'
